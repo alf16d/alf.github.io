@@ -1,0 +1,334 @@
+html, body{
+
+    font-family: "Segoe UI";
+}
+
+.back-img{
+    height: 800px;
+    margin: 0;
+    padding: 0;
+    background: url('../img/header_bg.jpg') no-repeat;
+    background-position: center;
+}
+
+.back-row{
+    height: 150px;
+    background: #475158;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navbar-default{
+    height: 50px;
+    background: #475158;
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-brand{
+    text-transform: uppercase;
+    color: white !important;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar-brand span{
+    color: #4bcaff;
+}
+
+.fir-nav ul li a{
+    background: #475158;
+    color: white !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fir-nav ul li a:hover{
+    background: #475158 !important;
+    border-bottom: 2px solid #4bcaff;
+}
+
+.active{
+    color: #4bcaff !important;
+    top:-2px;
+    border: 2px solid #4bcaff;
+}
+
+.active-inv{
+    top:-2px;
+    border: 2px solid #4bcaff;
+    color: #4bcaff !important;
+}
+
+.head-text{
+    height: 81.25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.head-text span{
+    padding: 6px;
+    font-size: 42px;
+    color: white;
+    background: #475158;
+    line-height: 75px;
+    font-weight: lighter;
+}
+
+.services-bg{
+    background: #4bcaff;
+}
+
+.h1{
+    margin: 78px 0 40px 15px;
+    font-size: 30px;
+    color:white;
+    font-weight: lighter;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.h2{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.serv-block{
+    height: 250px;
+    color:white;
+    font-size: 12px;
+}
+
+.port{
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sec-nav ul li a{
+    z-index: 1;
+    color: #626f76 !important;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sec-nav ul li a:hover{
+    border-bottom: 2px solid #4bcaff;
+}
+
+.port-img{
+    z-index: 0;
+    display: block;
+    margin: 0 auto;
+    margin-bottom:20px;
+}
+
+.section{
+    background: #515f67;
+}
+
+.section p{
+    color: white;
+}
+
+.section .row{
+    margin-bottom: 50px;
+}
+
+.visit-me{
+    border: 2px solid #353f46;
+    background: #515f67;
+    color: 353f46;
+    width: 140px;
+    height: 45px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.visit-me:hover{
+    background: #4bcaff;
+}
+
+.twitter{
+    background: #4bcaff;
+}
+
+.twitter .row{
+    padding-bottom: 50px;
+}
+
+.twitter .p{
+    color: white !important;
+    font-size: 28px !important;
+    font-weight: lighter;
+}
+
+.twitter .p span{
+    font-weight: bold;
+}
+
+.who-is{
+    height: 505px;
+    background: url(../img/who-is-bg.jpg) no-repeat;
+    background-position: center;
+}
+
+.who-is p{
+    color: white;
+    line-height: 22px;
+    margin-left: -15px;
+    margin-bottom: 40px;
+    padding-right: 20px;
+}
+
+.testi .row{
+    padding-bottom: 50px;
+}
+
+.testi .h1{
+    color:#515f67;
+}
+
+.testi .p{
+    color:#515f67;
+    font-size: 28px;
+    font-weight: lighter;
+}
+
+.testi .h6{
+    font-size: 14px;
+    color:#4bcaff;
+}
+
+.contact{
+    height: 800px;
+    background: url(../img/contact-bg.jpg) no-repeat;
+    background-position: center;
+}
+
+.contact .row div[class^="col"]{
+    padding-left: 0;
+}
+
+.contact .row div[class^="col"] input{
+    height: 50px;
+    width: 100%;
+    margin-top: 5px; 
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 0 10px 0 10px;
+    font-size: 16px;
+}
+
+.contact .row div[class^="col"] p{
+    color: white;
+    margin-top: 20px;
+}
+
+.contact .row lable{
+    color: white;
+    text-transform: uppercase;
+}
+
+.contact .row textarea{
+    font-size: 16px;
+    margin-top: 5px; 
+    width: 100%;
+    height:220px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding:10px;
+}
+
+.btn-message{
+    width: 370px;
+    height: 60px;
+    border: 0;
+    background: #4bcaff;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 40px;
+    margin-left: -15px;
+    font-weight: bold;
+}
+
+.footer{
+    height: 170px;
+    background: #353f47;
+}
+
+.footer .container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer ul{
+    list-style-type: none;
+}
+
+.footer ul li{
+    display: inline;
+    margin-right: 5px; 
+    color: #677a85;
+}
+
+.footer ul li a{
+    color: #677a85;
+}
+
+.footer .navbar-default{
+    background: none;
+
+}
+
+@media screen and (max-width: 768px){
+    .back-row{
+        height: 50px;
+        display: block;
+    }
+    .active{
+        top: 0px;
+        border: 2px solid #4bcaff;
+    }
+
+    .back-img{
+        height: 400px;
+    }
+
+    .head-text span{
+        font-size: 30px;
+        line-height: 70px;
+    }
+    .sec-nav ul li a{
+        background: #475158;
+        color: white !important;
+    }
+
+    .sec-nav ul li a:hover{
+        background: #475158 !important;
+    }
+}
+
+@media screen and (max-width: 970px){
+    .services-bg{
+        height: 655px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .services-bg{
+        height: 1155px;
+    }
+}

@@ -3,75 +3,62 @@ html, body{
     font-family: "Segoe UI";
 }
 
-.back-img{
-    height: 800px;
-    margin: 0;
-    padding: 0;
+.header{
     background: url('../img/header_bg.jpg') no-repeat;
     background-position: center;
 }
 
-.back-row{
-    height: 150px;
+.navbar{
+    padding: 20px 0;    
     background: #475158;
     opacity: 0.8;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    padding-top: 20px;
+    border: none;
 }
 
-.navbar-default{
-    height: 50px;
-    background: #475158;
-    border-radius: 0;
-    border: 0;
+.navbar-toggle .icon-bar{
+    background: white;
 }
 
 .navbar-brand{
     text-transform: uppercase;
-    color: white !important;
+    color: white;
     font-size: 30px;
     font-weight: bold;
+    line-height: 20px;
 }
 
 .navbar-brand span{
     color: #4bcaff;
 }
 
-.fir-nav ul li a{
-    background: #475158;
-    color: white !important;
+.navbar-nav li a{
+    color: white;
     font-size: 14px;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: uppercase; 
 }
 
-.fir-nav ul li a:hover{
-    background: #475158 !important;
+.navbar-nav li a:hover{
+    background: none;
     border-bottom: 2px solid #4bcaff;
 }
 
 .active{
+    margin-top: -2px;
     color: #4bcaff !important;
-    top:-2px;
     border: 2px solid #4bcaff;
 }
 
-.active-inv{
-    top:-2px;
-    border: 2px solid #4bcaff;
-    color: #4bcaff !important;
-}
-
-.head-text{
-    height: 81.25%;
+.header-text{
+    height: 400px;
+    text-align: center;  
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+    align-items: center;
 }
 
-.head-text span{
+.header-text span{
+    opacity: 0.8;
     padding: 6px;
     font-size: 42px;
     color: white;
@@ -80,12 +67,18 @@ html, body{
     font-weight: lighter;
 }
 
-.services-bg{
+.services{
+    padding: 60px 0;
     background: #4bcaff;
 }
 
-.h1{
-    margin: 78px 0 40px 15px;
+.services-block{
+    color:white;
+    font-size: 12px;
+}
+
+.h-30-lighter{
+    margin-bottom: 20px;
     font-size: 30px;
     color:white;
     font-weight: lighter;
@@ -93,22 +86,27 @@ html, body{
     text-transform: uppercase;
 }
 
-.h2{
+.h-24-regular{
+    margin: 10px 0;
     font-size: 24px;
     text-transform: uppercase;
 }
 
-.serv-block{
-    height: 250px;
-    color:white;
-    font-size: 12px;
+.portfolio{
+    padding: 60px 0;
 }
 
-.port{
-    height: 195px;
+.portfolio-1{
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.h-30-bold{
+    font-size: 40px;
+    font-weight: 500;
+    color: #515F67;
+    text-transform: uppercase;
 }
 
 .sec-nav ul li a{
@@ -131,15 +129,12 @@ html, body{
 }
 
 .section{
+    padding: 60px 0;
     background: #515f67;
 }
 
 .section p{
     color: white;
-}
-
-.section .row{
-    margin-bottom: 50px;
 }
 
 .visit-me{
@@ -157,16 +152,13 @@ html, body{
 }
 
 .twitter{
+    padding: 60px 0;
     background: #4bcaff;
 }
 
-.twitter .row{
-    padding-bottom: 50px;
-}
-
 .twitter .p{
-    color: white !important;
-    font-size: 28px !important;
+    color: white;
+    font-size: 28px;
     font-weight: lighter;
 }
 
@@ -175,7 +167,7 @@ html, body{
 }
 
 .who-is{
-    height: 505px;
+    padding: 60px 0;
     background: url(../img/who-is-bg.jpg) no-repeat;
     background-position: center;
 }
@@ -188,12 +180,8 @@ html, body{
     padding-right: 20px;
 }
 
-.testi .row{
-    padding-bottom: 50px;
-}
-
-.testi .h1{
-    color:#515f67;
+.testi{
+    padding: 60px 0;
 }
 
 .testi .p{
@@ -208,7 +196,7 @@ html, body{
 }
 
 .contact{
-    height: 800px;
+    padding: 60px 0;
     background: url(../img/contact-bg.jpg) no-repeat;
     background-position: center;
 }
@@ -263,7 +251,7 @@ html, body{
 }
 
 .footer{
-    height: 170px;
+    padding: 60px;
     background: #353f47;
 }
 
@@ -275,6 +263,7 @@ html, body{
 }
 
 .footer ul{
+    padding-left: 0;
     list-style-type: none;
 }
 

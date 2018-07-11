@@ -1,69 +1,80 @@
-<html><head>
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-	<title>3d test</title>
-	<style type="text/css">
-		html, body {
-			margin: 0;
-			background-color: transparent;
-		}
-		.buttonHolder{
-			position: fixed;
-			bottom: 0;
-			width:100%;
-			text-align: center;
-			padding-top: 5px;
-			padding-bottom: 40px;
-			perspective: 250px;
-			background-color: transparent;
-		}
+<html>
 
-		.button{
-			font-family: sans-serif;
-			text-decoration: none;
-			text-transform: uppercase;
-			display: inline-block;
-			padding: 10px;
-			color: #141540;
-			font-size: 12px;
-			font-weight: bolder;
-			min-width: 80px;
-			-webkit-tap-highlight-color: transparent;
-			background-color: #aeefbb;
-		}
-		.ripple {
-			position: relative;
-			overflow: hidden;
-			transform: translate3d(0, 0, 0);
-		}
-		.ripple:after {
-			content: "";
-			display: block;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			pointer-events: none;
-			background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
-			background-repeat: no-repeat;
-			background-position: 50%;
-			transform: scale(10, 10);
-			opacity: 0;
-			transition: transform .3s, opacity 1s;
-		}
-		.ripple:active:after {
-			transform: scale(0, 0);
-			opacity: .2;
-			transition: 0s;
-		}
-	</style>
+<head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <title>3d test</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            background-color: transparent;
+        }
+
+        .buttonHolder {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 40px;
+            perspective: 250px;
+            background-color: transparent;
+        }
+
+        .button {
+            font-family: sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 10px;
+            color: #141540;
+            font-size: 12px;
+            font-weight: bolder;
+            min-width: 80px;
+            -webkit-tap-highlight-color: transparent;
+            background-color: #aeefbb;
+        }
+
+        .ripple {
+            position: relative;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .3s, opacity 1s;
+        }
+
+        .ripple:active:after {
+            transform: scale(0, 0);
+            opacity: .2;
+            transition: 0s;
+        }
+    </style>
 </head>
+
 <body>
-	<div class="buttonHolder">
-		<a class="button ripple" href="uniwebview://3d?command=action&amp;name=action_0">change</a>
-		<a class="button ripple" href="uniwebview://3d?command=action&amp;name=action_1">play</a>
-		<a class="button ripple" href="uniwebview://3d?command=action&amp;name=action_2">fly</a>
-	</div>
+    <div class="buttonHolder">
+        <a class="button ripple" href="uniwebview://3d?command=left">left</a>
+        <a class="button ripple" href="uniwebview://3d?command=right">right</a>
+        <a class="button ripple" href="uniwebview://3d?command=up">up</a>
+        <a class="button ripple" href="uniwebview://3d?command=down">down</a>
+    </div>
 
 
-</body></html>
+</body>
+
+</html>

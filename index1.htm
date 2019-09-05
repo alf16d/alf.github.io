@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://test-yaskravo-mobi-app.azurewebsites.net/ui/charlemagne/house.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>AR Art</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+		}
+
+		.message-holder {
+			position: absolute;
+			top: 8px;
+			width: 100%;
+			height: 32px;
+			font-size: 12px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #FFFFFF;
+			opacity: 0.8;
+			font-family: sans-serif;
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		.aim-holder {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.buttonHolder{
+			box-sizing: border-box;
+			position: fixed;
+			bottom: 48px;
+			width: 100%;
+			text-align: center;
+			background-color: transparent;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-justify-content: space-around;
+			justify-content: space-around;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+
+		.button{
+			text-decoration: none;
+			-webkit-tap-highlight-color: transparent;
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			background: linear-gradient(180deg, #03ADFA 0%, #0234C6 98.9%);
+			box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.5), 0px 8px 8px rgba(0, 0, 0, 0.24), 0px 0px 8px rgba(0, 0, 0, 0.12);
+		}
+		.button img {
+			margin-top: 16px;
+		}
+
+		.zoomHolder {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			padding: 16px;
+		}
+
+		.zoomButton, .sendButton {
+			margin: 15px 0;
+			padding: 10px;
+		}
+
+		.senderHolder {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+		}
+
+		.ripple {
+			position: relative;
+			overflow: hidden;
+			transform: translate3d(0, 0, 0);
+		}
+		.ripple:after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			pointer-events: none;
+			background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+			box-shadow: 0 5px 15px 0 rgba(255,255,255,.4), 0 4px 7px 0 rgba(255,255,255,.1);
+			background-repeat: no-repeat;
+			background-position: 50%;
+			transform: scale(10, 10);
+			opacity: 0;
+			transition: transform .3s, opacity 1s;
+		}
+		.ripple:active:after {
+			transform: scale(0, 0);
+			opacity: .2;
+			transition: 0s;
+		}
+		.hide {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="message-holder">Align the outline on the screen with the object</div>
+	<div class="aim-holder">
+		<img class="aim" src="./index1_files/aim-house.svg">
+	</div>
+	<div class="buttonHolder">
+		<span class="button ripple">
+			<img src="./index1_files/button-icon.svg">
+		</span>
+	</div>
+	<div class="zoomHolder hide">
+		<button class="zoomButton zoomIn ripple">+0.5</button>
+		<span class="currentZoom"></span>
+		<button class="zoomButton zoomOut ripple">-0.5</button>
+	</div>
+	<div class="senderHolder hide">
+		<button class="sendButton ripple">send</button>
+	</div>
+
+	<script type="text/javascript">
+		const button = document.querySelector('.button')
+		const body = document.querySelector('body')
+		const zoomHolder = document.querySelector('.zoomHolder')
+		const senderHolder = document.querySelector('.senderHolder')
+		const currentZoomBox = document.querySelector('.currentZoom')
+		const zoomIn = document.querySelector('.zoomIn')
+		const zoomOut = document.querySelector('.zoomOut')
+		const send = document.querySelector('.sendButton')
+		let zoomValue = 0
+		const targetId = findParam(location.search, 'targetid')
+
+		window.addEventListener("message", receiveMessage, false);
+
+		function receiveMessage(event) {
+			if (event && event.data) {
+				console.log(`iframe received message: ${event.data.message} of type ${event.data.type}`)
+				if (event.data.type === 'hitEvent success') {
+					body.classList.add('hide')
+				} /*else if (event.data.type === 'bundleScaleX') {
+					zoomHolder.classList.remove('hide')
+					senderHolder.classList.remove('hide')
+					zoomValue = event.data.message
+					currentZoomBox.textContent = zoomValue
+				}*/
+			}
+		}
+
+		function sendMessage(data) {
+			if (window.parent) {
+				window.parent.postMessage({ action: "add command", command: data }, '*')
+			}
+		}
+
+		function findParam(param, wantedItem) {
+		    let paramString = param.replace(/\s+/g, '');
+		    let pattern = wantedItem + '=([0-9a-z-]+)';
+		    let re = new RegExp(pattern, 'i');
+		    let matched = re.exec(paramString);
+		    return matched ? matched[1]: ''
+		}
+
+		body.addEventListener('click', () => null)		
+
+		button.addEventListener('click', function() {
+			location.href = "uniwebview://hitevent"
+		})
+		/*zoomIn.addEventListener('click', function() {
+			zoomValue += 0.5
+			const command = `uniwebview://3d?scalevalue=${zoomValue}`
+			sendMessage(command)
+			currentZoomBox.textContent = zoomValue
+		})
+		zoomOut.addEventListener('click', function() {
+			zoomValue -= 0.5
+			const command = `uniwebview://3d?scalevalue=${zoomValue}`
+			sendMessage(command)
+			location.href = `uniwebview://3d?scalevalue=${zoomValue}`
+			currentZoomBox.textContent = zoomValue
+		})
+		send.addEventListener('click', function() {
+			const mail = `mailto:yaskravoua@gmail.com?subject=model zoom&body=target: ${targetId}, zoom level: ${zoomValue}`
+			sendMessage(mail)
+		})*/
+	</script>
+
+
+</body></html>

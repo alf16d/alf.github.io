@@ -1,0 +1,41 @@
+ManifestFileVersion: 0
+CRC: 1562058046
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f9dc09ac9e8e621e90d2caa22142c017
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8be5c844bab0af4e68fb472dc2454371
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+Assets:
+- Assets/Bundle/luxo.fbx
+- Assets/Bundle/New Animator Controller.controller
+- Assets/Bundle/CINEMA_4D_Main.anim
+- Assets/Bundle/Prefab1.prefab
+Dependencies: []

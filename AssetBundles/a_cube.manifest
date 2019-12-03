@@ -1,0 +1,41 @@
+ManifestFileVersion: 0
+CRC: 2486368437
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0eaa5cb69927d5a7dbcfbe8c5fcc8c31
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8c10756964b93103f956bfb60498827b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Model/ImageLibrary1.asset
+- Assets/Model/rotate.anim
+- Assets/Model/PrefabCube.controller
+- Assets/Model/PrefabCube.prefab
+Dependencies: []

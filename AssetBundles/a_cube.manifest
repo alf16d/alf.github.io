@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3590303425
+CRC: 2464196865
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 717f64d5c7a751dcf2f93b122fece39e
+    Hash: 7a719305af8249cd7c2303562a664779
   TypeTreeHash:
     serializedVersion: 2
     Hash: dce6089b9901776fdbb90b1ff192091a
@@ -36,9 +36,10 @@ ClassTypes:
 - Class: 115
   Script: {instanceID: 0}
 Assets:
+- Assets/Model/poster2.jpg
 - Assets/Model/ImageLibrary1.asset
 - Assets/Model/rotate.anim
-- Assets/Model/poster.jpg
+- Assets/Model/poster1.jpeg
 - Assets/Model/PrefabCube.controller
 - Assets/Model/PrefabCube.prefab
 Dependencies: []

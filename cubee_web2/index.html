@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | CubeeWeb</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <style>                                                    
+      .getimage {                                              
+          position: absolute;                                  
+          left: 0;                                             
+          top: 0;                                              
+          width: 100%;                                         
+          height: 100%;                                        
+          display: -webkit-flex;                               
+          display: flex;                                       
+          -webkit-flex-flow: column;                           
+          flex-flow: column;                                   
+          -webkit-justify-content: center;                     
+          -webkit-align-content: center;                       
+          -webkit-align-items: center;                         
+                                                               
+          justify-content: center;                             
+          align-content: center;                               
+          align-items: center;                                 
+                                                               
+          z-index: 2;                                          
+          color: white;                                        
+          background-color: rgba(0,0,0,0.8);                   
+          font: sans-serif;                                    
+          font-size: x-large;                                  
+      }                                                        
+      .getimage a,                                             
+      .getimage label {                                        
+         font-size: x-large;                                   
+         background-color: #666;                               
+         border-radius: 0.5em;                                 
+         border: 1px solid black;                              
+         padding: 0.5em;                                       
+         margin: 0.25em;                                       
+         outline: none;                                        
+         display: inline-block;                                
+      }                                                        
+      .getimage input {                                        
+          display: none;                                       
+      }                                                        
+    </style>
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/cubee_web.json", {onProgress: UnityProgress});
+      var receiveMessageFromUnity = function(command, data) {
+        console.log("receiveMessageFromUnity", command, data);
+
+        if(command == 'plane_click'){
+          GetImage(data);
+          // if(data == 'left'){
+
+          // }
+          // else if (data == 'right'){
+
+          // }
+          // else if (data == 'top'){
+            
+          // }
+          // else if (data == 'front'){
+            
+          // }
+          // else if (data == 'back'){
+            
+          // }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="getimage" , id="getimage">
+      <div>
+        <label for="photo">click to choose an image</label>
+        <input id="photo" type="file" accept=".jpeg,.jpg,.png"><br/>
+          <a id="cancel">cancel</a>
+        </div>
+      </div>
+
+      <div class="webgl-content">
+        <div id="unityContainer" style="width: 960px; height: 600px"></div>
+        <div class="footer">
+          <div class="webgl-logo"></div>
+          <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+          <div class="title">CubeeWeb</div>
+        </div>
+      </div>
+    </body>
+
+    <script>
+
+  const fileSelector = document.getElementById('photo');
+  const getimage = document.getElementById('getimage');
+  var cancel = document.getElementById("cancel");  // there's only one
+
+  getimage.style.display = "none";
+
+  var planeType = "";
+
+  fileSelector.addEventListener('change', (event) => {
+      const fileList = event.target.files;
+      if (fileList && fileList.length) {
+        //console.log(fileList);
+
+        var reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+          //console.log(this.result);
+
+          getimage.style.display = "none";
+
+          if(planeType == 'left'){
+            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageLeft', this.result);
+          }
+          else if (planeType == 'right'){
+            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageRight', this.result);
+          }
+          else if (planeType == 'top'){
+            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageTop', this.result);
+          }
+          else if (planeType == 'front'){
+            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageFront', this.result);
+          }
+          else if (planeType == 'back'){
+            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageBack', this.result);
+          }
+
+          planeType = "";
+
+        }, false);
+        
+        reader.readAsDataURL(fileList[0]);
+      }
+  });
+
+  cancel.addEventListener('click', (event) => {
+    getimage.style.display = "none";
+
+  });
+
+  function GetImage(plane)  {
+    getimage.style.removeProperty('display');
+    planeType = plane;
+  }
+</script>
+  </html>

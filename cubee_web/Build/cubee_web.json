@@ -1,0 +1,16 @@
+{
+"companyName": "yaskravo",
+"productName": "CubeeWeb",
+"productVersion": "0.1.1",
+"dataUrl": "cubee_web.data.unityweb",
+"wasmCodeUrl": "cubee_web.wasm.code.unityweb",
+"wasmFrameworkUrl": "cubee_web.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.15f1"
+}

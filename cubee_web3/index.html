@@ -49,6 +49,7 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
+      UnityLoader.compatibilityCheck=function(e,t,r){t();};
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/cubee_web.json", {onProgress: UnityProgress});
       var receiveMessageFromUnity = function(command, data) {
         console.log("receiveMessageFromUnity", command, data);
@@ -103,20 +104,55 @@
 
   var planeType = "";
 
+  // var img = document.createElement("img");
+  // var canvas = document.createElement("canvas");
+  // var ctx = canvas.getContext("2d");
+
   fileSelector.addEventListener('change', (event) => {
       const fileList = event.target.files;
       if (fileList && fileList.length) {
-        //console.log(fileList);
-
         var reader = new FileReader();
 
         reader.addEventListener("load", function () {
           //console.log(this.result);
-
           getimage.style.display = "none";
 
+          // img.src = this.result;
+
+          // ctx.drawImage(img, 0, 0);
+
+          // var MAX_WIDTH = 400;
+          // var MAX_HEIGHT = 400;
+          // var width = img.width;
+          // var height = img.height;
+
+          // if (width > height) {
+          //     if (width > MAX_WIDTH) {
+          //         height *= MAX_WIDTH / width;
+          //         width = MAX_WIDTH;
+          //     }
+          // } else {
+          //     if (height > MAX_HEIGHT) {
+          //         width *= MAX_HEIGHT / height;
+          //         height = MAX_HEIGHT;
+          //     }
+          // }
+          // canvas.width = width;
+          // canvas.height = height;
+          // ctx.drawImage(img, 0, 0, width, height);
+
+          // console.log(fileList[0]);
+          // console.log(fileList[0].type);
+          // dataurl = canvas.toDataURL(fileList[0].type);
+
+          // img.remove();
+          // canvas.remove();
+
+          //console.log(dataurl);
+
+
           if(planeType == 'left'){
-            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageLeft', this.result);
+            unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageLeft',this.result);
           }
           else if (planeType == 'right'){
             unityInstance.SendMessage('CommandsFromJs', 'ReceivedPlaneImageRight', this.result);
@@ -135,6 +171,7 @@
 
         }, false);
         
+        //console.log(URL.createObjectURL(fileList[0]));
         reader.readAsDataURL(fileList[0]);
       }
   });
